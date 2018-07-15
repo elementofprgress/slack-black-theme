@@ -14,30 +14,97 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-:root {
-   /* Modify these to change your theme colors: */
-   --primary: #09F;
-   --text: #DDD;
-   --background: #111;
-   --background-elevated: #222;
-
-   /* These should be less important: */
-   --background-hover: rgba(255, 255, 255, 0.1);
-   --background-light: #AAA;
-   --background-bright: #FFF;
-
-   --border-dim: #666;
-   --border-bright: var(--primary);
-
-   --text-bright: #FFF;
-   --text-special: var(--primary);
-
+:root {   
+    /*One Dark*/
+    --primary: #61AFEF;
+    --text: #ABB2BF;
+    --background: #282C34;
+    --background-elevated: #3B4048;
+   --background-light: #566573;
+   --background-bright: #f0f2f2;
    --scrollbar-background: #000;
-   --scrollbar-border: var(--primary);
+    --slug-background: rgba(50, 0, 0, 0.85);
+    /*One Dark*/
+       
+
+   --background-hover: rgba(255, 255, 255, 0.1);
+
+   --border-dim: var(--background-light);
+   --border-bright: var(--background-bright);
+
+   --text-bright: var(--background-bright);
+   --text-special: var(--primary);
+}
+
+.c-member_slug--link {
+    background: var(--slug-background);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.p-message_pane .p-message_pane__top_banners:not(:empty) + div .c-message_list:not(.c-virtual_list--scrollbar):before, .p-message_pane .p-message_pane__top_banners:not(:empty) + div .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before {
+    box-shadow: none!important;
+}
+.p-channel_sidebar__badge,
+.p-channel_sidebar__banner--mentions,
+.c-reaction,
+.p-message_pane__unread_banner__banner,
+.c-message_list__unread_divider__label {
+    background: var(--background-elevated)!important;
+    border: 1px solid var(--border-dim)!important;    
+}
+.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar), 
+.p-message_pane .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider {
+    background: transparent !important;
+}
+
+.c-message--ephemeral,
+.app_preview_link_slug, .internal_member_link, .internal_user_group_link, ts-mention {
+    background: var(--background-elevated)!important;
+}
+
+.client_container {
+    color: var(--text)!important;
+    background: (--background)!important;
+}
+.c-message__bot_label {
+    color: var(--text-special)!important;
+    background: var(--background-elevated)!important;
+}
+
+.c-reaction__count,
+.c-message_attachment__pretext,
+.c-timestamp,
+.c-timestamp__label {
+    color: var(--text)!important;
+}
+.c-message--adjacent .c-message__gutter {
+    opacity: 0.3!important;
+}
+
+#help_icon_circle_count { left: -25px!important; }
+
+.c-mrkdwn__member--link, .c-mrkdwn__subteam--link 
+{
+    background: var(--background-elevated) !important;
+}
+.c-mrkdwn__mention, .c-mrkdwn__mention:hover, .c-mrkdwn__member--mention, .c-mrkdwn__member--mention:hover, .c-mrkdwn__broadcast--mention, .c-mrkdwn__broadcast--mention:hover, .c-mrkdwn__subteam--mention, .c-mrkdwn__subteam--mention:hover 
+{
+    background: var(--background-hover) !important;
 }
 
 h1, h2, h3, h4 {
   color: var(--text);
+}
+
+.p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before, .p-message_pane .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before
+{
+    background: var(--background-elevated);
+    border-bottom-color: var(--border-dim);
+}
+.c-message_list__day_divider__label__pill {
+    background: var(--background-elevated);
+    color: var(--text);
 }
 
 .popover_mask {
@@ -51,7 +118,6 @@ h1, h2, h3, h4 {
    color: var(--text);
    z-index: 1;
 }
-
 
 /* Channel selector */
 /*.TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {*/
@@ -81,7 +147,10 @@ body:not(.loading) #team_menu:active {
 .p-channel_sidebar__channel:visited,
 .p-channel_sidebar__link:visited,
 .p-channel_sidebar__channel:hover,
-.p-channel_sidebar__link:hover {
+.p-channel_sidebar__link:hover, 
+.c-message,
+.c-message__body,
+.c-message_attachment {
    color: var(--text) !important;
 }
 
@@ -116,7 +185,7 @@ ts-jumper input[type="text"],
 .p-channel_sidebar__channel,
 .p-channel_sidebar__link {
   border-radius: 0 15px 15px 0;
-  height: 24px !important;
+  /*height: 24px !important;*/
 }
 
 .p-channel_sidebar__channel a {
@@ -125,7 +194,7 @@ ts-jumper input[type="text"],
 
 .p-channel_sidebar__static_list div {
    margin-right: 2px;
-   height: 24px !important;
+   /*height: 24px !important;*/
 }
 
 .p-channel_sidebar__channel--selected,
@@ -141,12 +210,13 @@ ts-jumper input[type="text"],
    border-width: 1px 1px 1px 0;
 }
 
+.c-message--hover,
 .p-channel_sidebar__channel:hover,
 .p-channel_sidebar__link:hover{
    background-color: var(--background-hover) !important;
    border-color: transparent;
    color: var(--text) !important;
-   height: 24px !important;
+   /*height: 24px !important;*/
 }
 
 .p-channel_sidebar__close_container {
@@ -189,9 +259,7 @@ li.active[class] span,
 .p-channel_sidebar__badge,
 .p-channel_sidebar__banner--mentions {
    /*inverted because important*/
-   background-color: var(--border-bright) !important;
-   border-color: var(--text-bright);
-   color: var(--text-bright);
+   color: var(--text-special);
 }
 
 /*also add border to unread count for individual channels*/
@@ -200,10 +268,10 @@ li.active[class] span,
 }
 
 /* new scrollbar */
-.p-channel_sidebar div.c-custom_scrollbar__thumb_vertical, .p-channel_sidebar div.c-scrollbar__bar {
+/*.p-channel_sidebar div.c-custom_scrollbar__thumb_vertical, .p-channel_sidebar div.c-scrollbar__bar {
   background: var(--background-elevated);
   border: 1px solid var(--scrollbar-border);
-}
+}*/
 
 #channels_scroller.show_which_channel_is_active[class] li.active .presence.active i.presence_icon,
 #channels_scroller.show_which_channel_is_active[class] li.active .slackbot_icon,
@@ -452,7 +520,7 @@ code {
 }
 
 a, a:link, a:visited{
-  color: var(--text-special);
+  color: var(--text-special) !important;
 }
 ts-message a .mention{
   color: var(--text-special) !important;
