@@ -32,7 +32,8 @@ limitations under the License.
    --border-dim: var(--background-light);
    --border-bright: var(--background-bright);
 
-   --text-bright: var(--background-bright);
+   /*--text-bright: var(--background-bright);*/
+   --text-bright: var(--primary);
    --text-special: var(--primary);
 }
 
@@ -445,7 +446,8 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .ql-placeholder {
-   color: var(--text);
+   /*color: var(--text);*/
+   color: #FFFFFF;
 }
 
 .ql-container.texty_single_line_input {
@@ -453,6 +455,13 @@ ts-message .action_hover_container .btn_msg_action,
   color: var(--text);
 }
 
+.ql-editor.ql-blank::before{
+	color:#ffffff;
+	content:attr(data-placeholder);
+	font-style:italic;
+	pointer-events:none;
+	position:absolute
+}
 .ql-container .ql-editor p {
   color: var(--text);
 }
